@@ -7,6 +7,8 @@
 #include "MasterRoom.generated.h"
 
 class URoomData;
+class UInstancedStaticMeshComponent;
+
 UCLASS()
 class DUNGEONTRAINING_API AMasterRoom : public AActor
 {
@@ -31,6 +33,17 @@ private:
 
 	UPROPERTY(VisibleAnywhere, Category = "Components")
 	UInstancedStaticMeshComponent* WallTopInstances;
+	
+	// Generation functions
+	void GenerateRoom();
+	void GenerateFloor(int32 RoomSizeX, int32 RoomSizeY);
+	void GenerateWalls(int32 RoomSizeX, int32 RoomSizeY);
+	
+	// Helper functions
+	FVector GetFloorTileLocation(int32 X, int32 Y) const;
+	// FVector GetWallLocation(int32 X, int32 Y, bool bIsNorthSouth, bool bIsEastWest) const;
+	// FRotator GetWallRotation(bool bIsNorthSouth) const;
+
 public:
 	// Room Data Asset
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Room Generation")
