@@ -17,6 +17,19 @@ public:
 protected:
 	virtual void BeginPlay() override;
 
+private:
+	// Instanced Static Mesh Components
+	UPROPERTY(VisibleAnywhere, Category = "Components")
+	UInstancedStaticMeshComponent* FloorInstances;
+
+	UPROPERTY(VisibleAnywhere, Category = "Components")
+	UInstancedStaticMeshComponent* WallBottomInstances;
+
+	UPROPERTY(VisibleAnywhere, Category = "Components")
+	UInstancedStaticMeshComponent* WallMiddleInstances;
+
+	UPROPERTY(VisibleAnywhere, Category = "Components")
+	UInstancedStaticMeshComponent* WallTopInstances;
 public:
 	// Room Data Asset
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Room Generation")
