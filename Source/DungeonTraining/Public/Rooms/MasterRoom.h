@@ -6,6 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "MasterRoom.generated.h"
 
+class URoomData;
 UCLASS()
 class DUNGEONTRAINING_API AMasterRoom : public AActor
 {
